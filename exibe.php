@@ -55,6 +55,8 @@ $filiais = [
 ];
 
 $emailsGerados = [];
+$todos = new Funcionario();
+
 
 
 ?>
@@ -77,8 +79,7 @@ $emailsGerados = [];
 
         <?php 
             foreach($funcionarios as $funcionario): 
-                $todos = new Funcionario();
-                $email = $todos -> converteNomeParaEmail($emailsGerados, $funcionario);
+              $email = $todos -> converteNomeParaEmail($emailsGerados, $funcionario);
         ?>
             <tr>       
                 <td><?php  echo $todos->converteNome($funcionario);  ?></td>

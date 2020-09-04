@@ -4,11 +4,9 @@ class Funcionario {
 
     private $nome;
 
-
     public function converteNome($nome) {
         $this->nome = ucwords(strtolower($nome));
         return $this->nome;
-    
     }  
 
     public function converteNomeParaEmail(&$emailsGerados, $nome) {
