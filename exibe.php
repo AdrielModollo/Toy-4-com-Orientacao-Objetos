@@ -62,7 +62,8 @@ $todos = new Funcionario();
 ?>
 
 <link rel="stylesheet" href="recursos/css/estilo.css">
-<a href="exportacoes.php"> Exportações </a>
+
+<button class="button button1" onclick="window.location.href = 'exportacoes.php'">Gerar relatórios</button>
 
 <table cellspacing="0">
     <?php foreach($filiais as $filial => $funcionarios): ?>
