@@ -1,6 +1,6 @@
 <?php
 
-require_once 'orientacaoObjeto.php';
+require_once '../controllers/orientacaoObjeto.php';
 
 $filiais = [
   'Adamantina' => [
@@ -61,9 +61,9 @@ $todos = new Funcionario();
 
 ?>
 
-<link rel="stylesheet" href="recursos/css/estilo.css">
+<link rel="stylesheet" href="../recursos/css/estilo.css">
 
-<button class="button button1" onclick="window.location.href = 'exportacoes.php'">Gerar relatórios</button>
+<button class="button button1" onclick="window.location.href = '../views/exportacoes.php'">Gerar relatórios</button>
 
 <table cellspacing="0">
     <?php foreach($filiais as $filial => $funcionarios): ?>

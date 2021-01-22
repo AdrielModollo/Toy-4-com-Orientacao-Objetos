@@ -11,8 +11,8 @@
 <body>
     <div class="container">
     <h2>Qual tipo de relatório você deseja?</h2>
-    <button type="button" class="btn btn-primary btn-block"  onclick="window.location.href = 'excel.php'">Gerar Excel</button>
-    <button type="button" class="btn btn-default btn-block"  onclick="window.location.href = 'createPDF.php'">Gerar PDF</button>
+    <button type="button" class="btn btn-primary btn-block"  onclick="window.location.href = '../controllers/excel.php'">Gerar Excel</button>
+    <button type="button" class="btn btn-default btn-block"  onclick="window.location.href = '../controllers/createPDF.php'">Gerar PDF</button>
 
 </body>
 </html>
