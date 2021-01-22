@@ -69,13 +69,13 @@ $arquivo = 'planilha.xls';
 $html = '';
 $html .= '<table cellspacing="0">';
      foreach($filiais as $filial => $funcionarios) {
-     $html .= '<tr id="tr<?php echo ">';
+     $html .= '<tr id="tr '.  $filial . '">';
      $html .= '<th></th>';
      $html .= '<th></th>';
-     $html .= '<th><h3><?php echo $filial; ?></h3></th>';
+     $html .= '<th><h3>'.  $filial . '</h3></th>';
      $html .= '</tr>';
 
-     $html .= '<tr id="tr<?php echo $filial; ?>">';
+     $html .= '<tr id="tr'.  $filial . '">';
      $html .=  '<th>Nome</th>';
      $html .=   '<th>E-mail</th>';
      $html .=    '<th>Filial</th>';
@@ -86,9 +86,9 @@ $html .= '<table cellspacing="0">';
               $email = $todos -> converteNomeParaEmail($emailsGerados, $funcionario);
         
             $html .= '<tr>';      
-            $html .= '<td><?php  echo $todos->converteNome($funcionario);  ?></td>';
-            $html .= '<td> <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></td>';
-            $html .= '<td><?php echo $filial; ?> </td>';
+            $html .= '<td>'. $todos->converteNome($funcionario)  .'</td>';
+            $html .= '<td> <a href="mailto:'. $email .'">'. $email .'</a></td>';
+            $html .= '<td>'. $filial .' </td>';
             $html .= '</tr>';
            
         }

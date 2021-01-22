@@ -62,7 +62,8 @@ $todos = new Funcionario();
 ?>
 
 <link rel="stylesheet" href="recursos/css/estilo.css">
-<a href="excel.php"> Gerar Planilha </a>
+<a href="exportacoes.php"> Exportações </a>
+
 <table cellspacing="0">
     <?php foreach($filiais as $filial => $funcionarios): ?>
         <tr id="tr<?php echo $filial; ?>">  
