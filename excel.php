@@ -62,31 +62,50 @@ $todos = new Funcionario();
 ?>
 
 <link rel="stylesheet" href="recursos/css/estilo.css">
-<a href="excel.php"> Gerar Planilha </a>
-<table cellspacing="0">
-    <?php foreach($filiais as $filial => $funcionarios): ?>
-        <tr id="tr<?php echo $filial; ?>">  
-            <th></th>
-            <th></th>
-            <th><h3><?php echo $filial; ?></h3></th>
-        </tr>
 
-        <tr id="tr<?php echo $filial; ?>">  
-            <th>Nome</th>  
-            <th>E-mail</th>
-            <th>Filial</th>
-        </tr>
+<?php 
+$arquivo = 'planilha.xls';
 
-        <?php 
-            foreach($funcionarios as $funcionario): 
+$html = '';
+$html .= '<table cellspacing="0">';
+     foreach($filiais as $filial => $funcionarios) {
+     $html .= '<tr id="tr<?php echo ">';
+     $html .= '<th></th>';
+     $html .= '<th></th>';
+     $html .= '<th><h3><?php echo $filial; ?></h3></th>';
+     $html .= '</tr>';
+
+     $html .= '<tr id="tr<?php echo $filial; ?>">';
+     $html .=  '<th>Nome</th>';
+     $html .=   '<th>E-mail</th>';
+     $html .=    '<th>Filial</th>';
+     $html .=   '</tr>';
+    
+
+            foreach($funcionarios as $funcionario) {
               $email = $todos -> converteNomeParaEmail($emailsGerados, $funcionario);
-        ?>
-            <tr>       
-                <td><?php  echo $todos->converteNome($funcionario);  ?></td>
-                <td> <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></td>
-                <td><?php echo $filial; ?> </td>
-            </tr> 
-        <?php endforeach; ?>
-    <?php endforeach; ?>   
-</table>
+        
+            $html .= '<tr>';      
+            $html .= '<td><?php  echo $todos->converteNome($funcionario);  ?></td>';
+            $html .= '<td> <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></td>';
+            $html .= '<td><?php echo $filial; ?> </td>';
+            $html .= '</tr>';
+           
+        }
+    }
+ 
+    $html .= '</table>';
+
+    // Configurações header para forçar o download
+    header ("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
+    header ("Last-Modified: " . gmdate("D,d M YH:i:s") . " GMT");
+    header ("Cache-Control: no-cache, must-revalidate");
+    header ("Pragma: no-cache");
+    header ("Content-type: application/x-msexcel");
+    header ("Content-Disposition: attachment; filename=\"{$arquivo}\"" );
+    header ("Content-Description: PHP Generated Data" );
+
+    // Envia o conteúdo do arquivo
+    echo $html;
+    exit;
 
