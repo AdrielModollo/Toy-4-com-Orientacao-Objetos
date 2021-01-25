@@ -41,3 +41,5 @@ $dompdf->render();
 // Output the generated PDF to Browser
 $dompdf->stream();
 ```
+
+Padronizado sistema para MVC
