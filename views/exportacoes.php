@@ -9,7 +9,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-<!-- Ainda não tive tempo de regularizar o crud -->
+<!-- Estou trabalhando em algo legal, em breve irei subir ;)-->
     <div class="container">
     <h2>Qual tipo de relatório você deseja?</h2>
     <button type="button" class="btn btn-primary btn-block"  onclick="window.location.href = '../controllers/excel.php'">Gerar Excel</button>
